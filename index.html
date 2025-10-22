@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galaxy S22 Ultra</title>
+    <link rel="icon" href="assets/samsung-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        :root {
+            --wine: #5b2333;
+            --whitesmoke: #f7f4f3;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--whitesmoke);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .banner video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #70595f8c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+            text-align: center;
+            z-index: 2;
+            animation: fadeIn 2s ease-in-out;
+            padding: 4rem 2rem;
+        }
+
+        .banner-overlay h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .banner-overlay p {
+            font-size: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .btn-wine {
+            background-color: var(--wine);
+            color: #fff;
+            border-radius: 50px;
+            transition: 0.3s ease;
+        }
+
+        .btn-wine:hover {
+            background-color: #441928;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-wine {
+            border-color: var(--wine);
+            color: var(--wine);
+            border-radius: 50px;
+            transition: 0.3s ease;
+        }
+
+        .btn-outline-wine:hover {
+            background-color: var(--wine);
+            color: #fff;
+        }
+
+        .intro {
+            padding: 5rem 2rem;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .intro h2 {
+            font-weight: 700;
+            color: var(--wine);
+            margin-bottom: 1rem;
+        }
+
+        .intro p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .spec-section {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .spec-section:hover {
+            transform: scale(1.03);
+        }
+
+        .spec-title {
+            color: #5b2333;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .phone-img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .phone-img:hover {
+            transform: scale(1.05);
+        }
+
+        .color-dot {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: inline-block;
+            border: 1px solid #ccc;
+        }
+
+        .color-burgundy {
+            background-color: #5b2333;
+        }
+
+        .color-green {
+            background-color: #3a6150;
+        }
+
+        .color-black {
+            background-color: #000;
+        }
+
+        .color-white {
+            background-color: #f7f4f3;
+        }
+
+        .three-col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem 1rem;
+        }
+
+        .three-col .col-box {
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+        }
+
+        .three-col .middle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Quick Overview */
+        .row.align-items-center.mb-5 {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .row.align-items-center.mb-5 .col-md-6 {
+            margin-bottom: 2rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #5b2333;
+            font-weight: 600;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .phone-img {
+                max-width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .spec-item {
+                flex-direction: column !important;
+                text-align: center;
+            }
+
+            .spec-text {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="banner">
+        <video autoplay muted loop playsinline>
+            <source src="assets/galaxys22.mp4" type="video/mp4" />
+        </video>
+        <div class="banner-overlay">
+            <div class="row align-items-center g-4">
+                <div class="order-2 order-lg-1">
+                    <h1 class="display-4 fw-bold">Samsung Galaxy S22 Ultra</h1>
+                    <p class="lead mb-4">Sleek. Smart. Stunning. The Galaxy S22 Ultra redefines flagship design and
+                        performance with precision and power.</p>
+                    <a class="btn btn-wine btn-lg px-4 py-2 me-2"
+                        href="https://www.samsung.com/ph/smartphones/galaxy-s22-ultra/buy/" target="_blank">Buy Now</a>
+                    <a class="btn btn-outline-wine btn-lg px-4 py-2" href="#" id="see-specs-btn">See Specs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro">
+        <h2>Built to redefine what a smartphone can do</h2>
+        <p>Experience epic performance and breathtaking design with the Samsung Galaxy S22 Ultra.
+            From its powerful Nightography camera to its stunning Dynamic AMOLED 2X display,
+            this device is designed to inspire and impress.</p>
+    </section>
+
+    <section class="container my-5">
+        <div class="spec-section d-flex flex-wrap align-items-center justify-content-center">
+
+            <div class="me-4 flex-fill" style="min-width: 280px; max-width: 500px;" id="overview-section">
+                <h3>Quick Overview</h3>
+                <p><strong>Display:</strong> 6.8" Dynamic AMOLED 2X, 120Hz, 1750 nits</p>
+                <p><strong>Camera:</strong> 108MP + 12MP + 10MP + 10MP | 40MP Front</p>
+                <p><strong>Battery:</strong> 5,000mAh | 45W Wired | 15W Wireless</p>
+                <p><strong>Storage:</strong> Up to 1TB | 12GB RAM</p>
+                <p><strong>Processor:</strong> 4nm Advanced Processing</p>
+            </div>
+
+            <div class="text-center flex-fill" style="min-width: 280px; max-width: 500px;">
+                <img src="assets/s22-cam.png" alt="Samsung Galaxy S22 Ultra" class="phone-img">
+            </div>
+        </div>
+    </section>
+
+    <section class="three-col container-fluid">
+        <div class="col-box">
+            <div class="spec-section">
+                <div class="spec-title">Camera</div>
+                <ul>
+                    <li><b>Front:</b> 40MP, F2.2, FOV 80°</li>
+                    <li><b>Ultra-Wide:</b> 12MP, F2.2, FOV 120°</li>
+                    <li><b>Wide:</b> 108MP, F1.8, FOV 85°</li>
+                    <li><b>Telephoto 1:</b> 10MP, 3x Optical Zoom, OIS, F2.4</li>
+                    <li><b>Telephoto 2:</b> 10MP, 10x Optical Zoom, OIS, F4.9</li>
+                </ul>
+            </div>
+            <div class="spec-section">
+                <div class="spec-title">Battery & Charging</div>
+                <ul>
+                    <li>Battery Capacity: 5,000mAh</li>
+                    <li>45W Wired Fast Charging</li>
+                    <li>15W Wireless Charging</li>
+                    <li>Wireless PowerShare Supported</li>
+                </ul>
+            </div>
+            <div class="spec-section">
+                <div class="spec-title">Connectivity</div>
+                <ul>
+                    <li>5G, LTE, Wi-Fi 6E</li>
+                    <li>Bluetooth v5.2</li>
+                    <li>USB Type-C</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-box middle">
+            <img src="assets/s22-img.png" alt="Samsung Galaxy S22 Ultra" class="phone-img">
+        </div>
+        <div class="col-box">
+            <div class="spec-section">
+                <div class="spec-title">Display</div>
+                <ul>
+                    <li>6.8” Edge QHD+ Dynamic AMOLED 2X</li>
+                    <li>120Hz Adaptive Refresh Rate</li>
+                    <li>240Hz Touch Sampling (Game Mode)</li>
+                    <li>1750 nits Peak Brightness</li>
+                    <li>Corning® Gorilla® Glass Victus®+</li>
+                </ul>
+            </div>
+            <div class="spec-section">
+                <div class="spec-title">Performance</div>
+                <ul>
+                    <li>Processor: Advanced 4nm Chipset</li>
+                    <li>Memory Options: 8GB + 128GB | 12GB + 256GB | 12GB + 512GB | 12GB + 1TB</li>
+                    <li>OS: Android 12 with One UI 4.1</li>
+                </ul>
+            </div>
+            <div class="spec-section">
+                <div class="spec-title">Durability & Security</div>
+                <ul>
+                    <li>Corning® Gorilla® Glass Victus®+</li>
+                    <li>IP68 Water & Dust Resistance</li>
+                    <li>Samsung Knox & Samsung Knox Vault</li>
+                    <li>Up to 5 Years of Security Updates</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <div class="spec-section text-center">
+            <h3 style="color: #5b2333; font-weight: 700;">Available Colors</h3>
+            <div class="d-flex justify-content-center mt-3 mb-2">
+                <span class="color-dot color-black"></span>
+                <span class="color-dot color-white"></span>
+                <span class="color-dot color-green"></span>
+                <span class="color-dot color-burgundy"></span>
+            </div>
+            <p style="color: #5b2333; font-weight: 400; font-size: 0.95rem;">
+                Phantom Black | Phantom White | Green | Burgundy
+            </p>
+        </div>
+    </section>
+
+    <div class="footer">
+        © A04 | Samsung Galaxy S22 Ultra
+    </div>
+    <script>
+        // Scroll to top on page load
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+        document.getElementById('see-specs-btn').addEventListener('click', function (e) {
+            e.preventDefault();
+            const overviewSection = document.getElementById('overview-section');
+            overviewSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
